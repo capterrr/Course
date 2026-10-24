@@ -1,6 +1,23 @@
 [package]
 name = "pharmacy_warehouse"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
+# Асинхронность и многопоточность
+smol = "2"
+async-lock = "3.4.2"
+
+# Базы данных (SQLite)
+rusqlite = { version = "0.40.2", features = ["bundled", "functions", "time", "uuid"] }
+async-sqlite = { version = "0.6.0", features = ["array", "backup", "blob", "bundled", "cache", "time", "uuid", "vtab", "window"] }
+
+# HTTP Сервер
+ohkami = { version = "0.24.9", features = ["rt_smol"] }
+
+# Сериализация и валидация
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.26.1", features = ["v4"] }
+time = { version = "0.3.55", features = ["macros"] }
+regex = "1"
